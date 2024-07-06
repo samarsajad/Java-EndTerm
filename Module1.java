@@ -417,39 +417,33 @@ public class MultiplicationTable {
         }
     }
 }
-Q14) import java.util.Scanner;
-
-public class SquareRootCalculator {
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter a number to find its square root: ");
-        double number = scanner.nextDouble();
-        
-        double squareRoot = calculateSquareRoot(number);
-        
-        System.out.println("Square root of " + number + " is approximately: " + squareRoot);
-        
-        scanner.close();
-    }
-    
-    public static double calculateSquareRoot(double number) {
-        if (number < 0) {
-            throw new IllegalArgumentException("Cannot calculate square root of a negative number");
-        }
-        
-        double x0 = number; // Initial guess
-        double x1 = (x0 + number / x0) / 2;
-        
-        // Keep iterating until the difference between x1 and x0 is negligible
-        while (Math.abs(x1 - x0) >= 0.0001) {
-            x0 = x1;
-            x1 = (x0 + number / x0) / 2;
-        }
-        
-        return x1;
-    }
+Q14) import java.util.Scanner;  
+public class FindSquareRootExample1   
+{  
+public static void main(String[] args)    
+{   
+System.out.print("Enter a number: ");  
+//creating object of the Scanner class  
+Scanner sc = new Scanner(System.in);  
+//reading a number form the user  
+int n = sc.nextInt();  
+//calling the method and prints the result  
+System.out.println("The square root of "+ n+ " is: "+squareRoot(n));  
+}  
+//user-defined method that contains the logic to find the square root  
+public static double squareRoot(int num)   
+{  
+//temporary variable  
+double t;  
+double sqrtroot=num/2;  
+do   
+{  
+t=sqrtroot;  
+sqrtroot=(t+(num/t))/2;  
+}   
+while((t-sqrtroot)!= 0);  
+return sqrtroot;  
+}
 }
 
 
